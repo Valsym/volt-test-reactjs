@@ -2,12 +2,6 @@ import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import {Form, FormGroup, FormControl, HelpBlock, ControlLabel, Col} from 'react-bootstrap';
 
-const attributes = [
-    { type: "Text", name: "Name", required: true, label: "Name" },
-    { type: "Text", adress: "Adress", required: true, label: "Adress"},
-    { type: "Text", tel: "Tel", label: "Tel" }
-];
-
 class CustomersForm extends React.Component{
   constructor() {
     super();
