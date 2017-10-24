@@ -3,12 +3,11 @@ import Grid  from 'react-bootstrap/lib/Grid';
 import Nav from 'react-bootstrap/lib/Nav';
 import Navbar from 'react-bootstrap/lib/Navbar';
 import NavItem  from 'react-bootstrap/lib/NavItem';
-import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
+
 //import PropTypes from 'prop-types';
 import { PropTypes } from 'react';
 import {  Link } from 'react-router';
 //import './bootstrap.css';
-import { IndexLinkContainer } from 'react-router-bootstrap'
 
 
 const propTypes = {

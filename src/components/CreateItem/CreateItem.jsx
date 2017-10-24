@@ -1,8 +1,10 @@
 import React from 'react';
-import CustomersForm from '../CustomersForm';
 import Button from 'react-bootstrap/lib/Button';
 import Modal from 'react-bootstrap/lib/Modal';
 import { Popover, Tooltip, OverlayTrigger } from 'react-bootstrap';
+
+import CustomersForm from '../CustomersForm';
+import ProductsForm from '../ProductsForm';
 
 class CreateItem extends React.Component {
 
@@ -36,13 +38,12 @@ class CreateItem extends React.Component {
       </Tooltip>
     );
 
+    const form = this.props.subreq == 'customers' ? <CustomersForm /> :
+      <ProductsForm />
+
     return (
       <span>
-        <Button
-          bsStyle="primary"
-          bsSize="large"
-          onClick={this.open}
-        >
+        <Button onClick={this.open} >
           Create
         </Button>
 
@@ -52,7 +53,7 @@ class CreateItem extends React.Component {
           </Modal.Header>
           <Modal.Body>
 
-            <CustomersForm />
+            { form }
 
           </Modal.Body>
           <Modal.Footer>

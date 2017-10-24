@@ -1,9 +1,5 @@
-
 import React, { PropTypes } from 'react';
-//import PropTypes from 'prop-types';
 import { render } from 'react-dom';
-
-
 import ReactRouterDOM from 'react-router-dom';
 import {
   Router,
@@ -11,14 +7,8 @@ import {
   Link,
   IndexRoute,
   browserHistory,
+  hashHistory
 } from 'react-router'
-
-import Grid  from 'react-bootstrap/lib/Grid';
-import Nav from 'react-bootstrap/lib/Nav';
-import Navbar from 'react-bootstrap/lib/Navbar';
-import NavItem  from 'react-bootstrap/lib/NavItem';
-
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 
 import Layout from 'components/Layout';
 import Main from 'components/Main';
@@ -35,4 +25,3 @@ render(
   		</Route>
   </Router>,
 	document.getElementById('app-root'));
-

@@ -2,11 +2,11 @@ import React from 'react';
 import Button from 'react-bootstrap/lib/Button';
 import {Form, FormGroup, FormControl, HelpBlock, ControlLabel, Col} from 'react-bootstrap';
 
-class CustomersForm extends React.Component{
+class ProductsForm extends React.Component{
   constructor() {
     super();
 
-    this.sendCustomers = this.sendCustomers.bind(this);
+    this.sendProducts = this.sendProducts.bind(this);
     this.getFormData = this.getFormData.bind(this);
 
     this.data = {data: ''};
@@ -15,19 +15,18 @@ class CustomersForm extends React.Component{
   getFormData() {
     let data = {
       name: this.inputName.value,
-      adress: this.inputAdress.value,
-      phone: this.inputPhone.value
+      price: this.inputPrice.value,
     }
     return data
   }
 
-  sendCustomers(event) {
+  sendProducts(event) {
     const data = this.getFormData();
     console.log('data=', data);
     if (data.name == '') {
       event.preventDefault();
     } else {
-      fetch('http://localhost:8000/api/customers',{
+      fetch('http://localhost:8000/api/products',{
         method: 'POST',
         headers: {
           'Accept': 'application/json',
@@ -44,35 +43,24 @@ class CustomersForm extends React.Component{
 
   render(){
     return(
-      <Form onSubmit={this.sendCustomers}>
+      <Form onSubmit={this.sendProducts}>
         <FormGroup controlId="formInlineName">
           <Col componentClass={ControlLabel} sm={2}>
             Name
           </Col>
           <Col sm={10}>
-            <FormControl type="text" placeholder="Mark Benson"
+            <FormControl type="text" placeholder="Parachute Pants"
               inputRef={ref => { this.inputName = ref; }}  />
           </Col>
         </FormGroup>
 
           <FormGroup controlId="formInlineName">
             <Col componentClass={ControlLabel} sm={2}>
-              Adress
+              Price
             </Col>
             <Col sm={10}>
-              <FormControl type="text" placeholder="353 Rochester St, Rialto FL 43250"
-                inputRef={ref => { this.inputAdress = ref; }} />
-            </Col>
-          </FormGroup>
-
-
-          <FormGroup controlId="formInlineName">
-            <Col componentClass={ControlLabel} sm={2}>
-              phoneNumber
-            </Col>
-            <Col sm={10}>
-              <FormControl type="text" placeholder="555-534-2342"
-                inputRef={ref => { this.inputPhone = ref; }} />
+              <FormControl type="text" placeholder="29.99"
+                inputRef={ref => { this.inputPrice = ref; }} />
             </Col>
           </FormGroup>
 
@@ -87,4 +75,4 @@ class CustomersForm extends React.Component{
   }
 }
 
-export default CustomersForm;
+export default ProductsForm;
